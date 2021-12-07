@@ -1,7 +1,7 @@
 import 'package:flutter_applovin_max/flutter_applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:expandable_page_view/expandable_page_view.dart';
+//import 'package:expandable_page_view/expandable_page_view.dart';
 import 'dart:io';
 import 'dart:async';
 
@@ -35,8 +35,8 @@ class BannerMaxView extends StatelessWidget {
   // late List<Widget> screens;
   // late AndroidView androidView;
   String banner_value = "";
-  bool visible_banner = true;
-  PageController controller = new PageController(initialPage: 0);
+ // bool visible_banner = true;
+  //PageController controller = new PageController(initialPage: 0);
   BannerMaxView(this.listener, this.size, this.adUnitId, this.unique,
       {Key? key})
       : super(key: key);
@@ -66,8 +66,8 @@ class BannerMaxView extends StatelessWidget {
                 print(event.toString());
                 if (event == AppLovinAdListener.adLoaded) {
                   banner_value = "load";
-                  where = 0;
-                  controller.jumpToPage(0);
+               //   where = 0;
+              //    controller.jumpToPage(0);
                   // Timer(Duration(seconds: 2), () {
                   //   print('timer ended');
                   //   print(banner_value);
@@ -77,13 +77,13 @@ class BannerMaxView extends StatelessWidget {
                   // });
                 } else if (event == AppLovinAdListener.adDisplayed) {
                   banner_value = "display";
-                  if (where == 1) {
-                    controller.jumpToPage(0);
-                  }
+                  //if (where == 1) {
+                    //controller.jumpToPage(0);
+                 // }
                 } else if (event == AppLovinAdListener.adLoadFailed) {
                   banner_value = "failed";
-                  where = 1;
-                  controller.jumpToPage(1);
+                 // where = 1;
+                //  controller.jumpToPage(1);
                 }
                 // else {
                 //               banner_value = "other";
